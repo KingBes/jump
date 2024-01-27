@@ -4,6 +4,8 @@
 ```shell
 composer require kingbes/jump
 ```
+### 必须安装视图拓展哦~~~
+https://www.workerman.net/doc/webman/view.html
 
 返回成功页面
 ```php
