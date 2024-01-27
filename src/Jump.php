@@ -92,4 +92,27 @@ class Jump
             return json($result);
         }
     }
+
+    /**
+     * API数据到客户端 function
+     *
+     * @param array $data 要返回的数据
+     * @param integer $code 返回的code
+     * @param string $msg 提示信息
+     * @param array $header 发送的Header信息
+     * @return void
+     */
+    public function result(array $data, int $code = 1, string $msg = "", array $header = [])
+    {
+        $result = [
+            'code' => $code,
+            'msg' => $msg,
+            'time' => time(),
+            'data' => $data,
+        ];
+
+        $header['Content-Type'] = 'application/json';
+
+        return response(json_encode($result, 320), 200, $header);
+    }
 }

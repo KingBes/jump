@@ -47,6 +47,36 @@ class IndexController extends Jump
 ![alt 失败页面](/截图error.png)
 ajax请求则返回json
 
+返回API数据到客户端
+```php
+use Kingbes\Jump\Jump; //引入
+
+class IndexController extends Jump
+{
+    public function index(Request $request)
+    {
+        // @param array $data — 要返回的数据
+        // @param integer $code — 返回的code
+        // @param string $msg — 提示信息
+        // @param array $header — 发送的Header信息
+        return $this->result(["name" => "webman"]); //返回json
+    }
+}
+```
+
+结果
+```json
+{
+    "code": 1,
+    "msg": "",
+    "time": 1706349439,
+    "data": {
+        "name": "webman"
+    }
+}
+```
+
+
 自定义返回模板,配置config/plugin/kingbes/jump/app.php
 ```php
 <?php
