@@ -22,7 +22,7 @@ class IndexController extends Jump
     }
 }
 ```
-![alt 成功页面](/截图success.png图)
+![alt 成功页面](/截图success.png)
 ajax请求则返回json
 
 返回失败页面
